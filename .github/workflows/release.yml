@@ -33,7 +33,7 @@ jobs:
       - name: Prerelease
         uses: irongut/EditRelease@v1.2.0
         with:
-          token: ${{ secrets.MY_TOKEN }}
+          token: ${{ github.token }}
           id: ${{ github.event.release.id }}
           prerelease: true
 
@@ -87,6 +87,6 @@ jobs:
       - name: Push tags
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.MY_TOKEN }}
+          token: ${{ github.token }}
           branch: main
           repository: alist-org/desktop-release
