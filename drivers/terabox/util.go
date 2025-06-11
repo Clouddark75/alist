@@ -18,6 +18,7 @@ import (
 )
 
 const (
+	UserAgent    = "terabox;1.40.0.132;PC;PC-Windows;10.0.26100;Windows TeraBox"
 	initialChunkSize     int64 = 4 << 20 // 4MB
 	initialSizeThreshold int64 = 4 << 30 // 4GB
 )
@@ -60,8 +61,7 @@ func (d *Terabox) request(rurl string, method string, callback base.ReqCallback,
 		"Cookie":           d.Cookie,
 		"Accept":           "application/json, text/plain, */*",
 		"Referer":          d.base_url,
-		"user-agent":       "terabox;1.40.0.132;PC;PC-Windows;10.0.26100;WindowsTeraBox",
-		//"User-Agent":       base.UserAgent,
+		"User-Agent":       base.UserAgent,
 		"X-Requested-With": "XMLHttpRequest",
 	})
 	req.SetQueryParams(map[string]string{
